@@ -1,0 +1,18 @@
+{
+  "name": "menu",
+  "version": "1.0.0",
+  "description": "Just a menu gen frontend app",
+  "main": "menu.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx esbuild --bundle ./menu.ts --outfile=./menu.js --sourcemap",
+    "start": "node server.mjs"
+  },
+  "author": "Sunny",
+  "license": "MIT",
+  "dependencies": {
+    "deleight": "^5.8.1",
+    "esbuild": "^0.25.0",
+    "express": "^4.21.2"
+  }
+}

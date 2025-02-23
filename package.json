@@ -2,7 +2,7 @@
   "name": "menu",
   "version": "1.0.0",
   "description": "A simple front-end app to create the daily menu of a cafeteria",
-  "main": "./docs/menu.js",
+  "main": "./menu.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx esbuild --bundle ./menu.ts --outfile=./docs/menu.js --sourcemap",

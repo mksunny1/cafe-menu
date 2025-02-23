@@ -207,6 +207,7 @@ ${pad}</${this.tag}>`;
     return h.input.set({ placeholder: "ALL SERVED WITH...", class: "bold red", value });
   }
   hh.div(
+    hh.a("< ", hh.small("view code")).set({ href: "https://github.com/mksunny1/cafe-menu", class: "no-print", style: "text-decoration: none;" }),
     hh.header(
       hh.h1("TODAY'S MENU")
     ).set({ class: "t-center" }),

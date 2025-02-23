@@ -12,6 +12,7 @@ function servedWith(value: string) {
 }
 
 hh.div(
+    hh.a('< ', hh.small('view code')).set({ href: 'https://github.com/mksunny1/cafe-menu', class: 'no-print', style: 'text-decoration: none;' }),
     hh.header(
         hh.h1("TODAY'S MENU")
     ).set({ class: 't-center' }),

@@ -1,11 +1,11 @@
 {
   "name": "menu",
   "version": "1.0.0",
-  "description": "Just a menu gen frontend app",
-  "main": "menu.js",
+  "description": "A simple front-end app to create the daily menu of a cafeteria",
+  "main": "./docs/menu.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx esbuild --bundle ./menu.ts --outfile=./menu.js --sourcemap",
+    "build": "npx esbuild --bundle ./menu.ts --outfile=./docs/menu.js --sourcemap",
     "start": "node server.mjs"
   },
   "author": "Sunny",

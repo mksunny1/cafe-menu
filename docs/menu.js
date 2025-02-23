@@ -141,6 +141,23 @@ ${pad}</${this.tag}>`;
       return this;
     }
   };
+  var IBuildersProxy = {
+    get(target, p) {
+      return (...args) => {
+        const result = [];
+        for (let builder of target.builders)
+          result.push(builder[p](...args));
+        if (result.length && !(result[0] instanceof Builder))
+          return result;
+        else
+          return target.self || (target.self = new Proxy(target, IBuildersProxy));
+      };
+    }
+  };
+  function builders(...builders2) {
+    return new Proxy({ builders: builders2 }, IBuildersProxy);
+  }
+  var b = builders;
   var HTMLElementBuilder = class extends Builder {
     create() {
       return document.createElement(this.tag);
@@ -206,7 +223,7 @@ ${pad}</${this.tag}>`;
   function servedWith(value) {
     return h.input.set({ placeholder: "ALL SERVED WITH...", class: "bold red", value });
   }
-  hh.div(
+  b(
     hh.a("< ", hh.small("view code")).set({ href: "https://github.com/mksunny1/cafe-menu", class: "no-print", style: "text-decoration: none;" }),
     hh.header(
       hh.h1("TODAY'S MENU")
